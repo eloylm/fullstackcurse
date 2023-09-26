@@ -2,25 +2,33 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 //import ReactDOM from 'react-dom';
 
-const Hello = () => {
+const Hello = (props) => {
   return (
-    <div>
-      <p>Hello Word</p>
-    </div>
+    <>
+      <p>Hello {props.name}, you are {props.age} years old</p>
+    </>
+  )
+}
+
+const Footer = () => {
+  return (
+    <>
+      <p>greetings created by <a href="https://github.com/eloylm">Icer00t</a></p>
+    </>
   )
 }
 
 const App = () => {
- 
+
   return (
-    <div>
+    <>
       <h1>Greetings</h1>
-      <Hello />
-      <Hello />
-      <Hello />
-    </div>
+      <Hello name="Santi" age={8 + 1}/>
+      <Footer />
+    </>
   )
 }
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(<App />)
+
